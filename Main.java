@@ -10,5 +10,15 @@ public class Main {
         wheel.Add(t2);
         wheel.Add(t3);
         wheel.SpinTheWheel(10);
+        wheel.ReceiveAPrize();
+        wheel.ReceiveAPrize();
+        wheel.ReceiveAPrize();
+        wheel.ReceiveAPrize();
+        wheel.ReceiveAPrize();
+        wheel.ReceiveAPrize();
+        wheel.ReceiveAPrize();
+        wheel.ReceiveAPrize();
+        wheel.ReceiveAPrize();
+        wheel.ReceiveAPrize();
     }
 }

@@ -31,6 +31,10 @@ public class Toy{
         return chance;
     }
 
+    public void decreaseAmount(){
+        amount--;
+    }
+
     @Override
     public String toString(){
         return id + ". " + name + " " + amount + " " + chance;

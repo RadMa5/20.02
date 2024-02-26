@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class WheelOfFortune{
 
@@ -34,10 +36,27 @@ public class WheelOfFortune{
                 int idWinner = table.get(win);
                 for(Toy toy: wheel){
                     if(idWinner == toy.getId()){
-                        winners.add(toy);
-                        System.out.println(toy);
+                        if(toy.getAmount() != 0){
+                            winners.add(toy);
+                            toy.decreaseAmount();
+                        } else{
+                            i--;
+                            break;
+                        }
                     }
                 }
+            }
+        }
+    }
+
+    public void ReceiveAPrize(){
+        if(winners.isEmpty()){
+            System.out.println("List of winners is empty");
+        } else{
+            try(FileWriter fw = new FileWriter("Winners.txt", true)){
+                fw.write(winners.remove(0).toString() + "\n");
+            } catch(IOException E){
+                System.out.println("IOException");
             }
         }
     }
